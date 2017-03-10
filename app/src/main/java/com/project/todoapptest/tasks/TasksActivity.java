@@ -40,5 +40,11 @@ public class TasksActivity extends AppCompatActivity {
 
         }
 
+        TasksFragment tasksFragment =
+                (TasksFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
+        if (tasksFragment == null) {
+//            tasksFragment = TasksFragment.new
+        }
+
     }
 }

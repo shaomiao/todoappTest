@@ -20,7 +20,38 @@ public interface TasksContract {
 
         void setLoadingIndicator(boolean active);
 
-//        void showTasks(List<Task>);
+        void showTasks(List<Task> tasks);
+
+        void showAddTask();
+
+        void showTaskDetailsUi(String taskId);
+
+        void showTaskMarkedComplete();
+
+        void showTaskMarkedActive();
+
+        void showCompletedTasksCleared();
+
+        void showLoadingTasksError();
+
+        void showNoTasks();
+
+        void showActiveFilterLabel();
+
+        void showCompletedFilterLabel();
+
+        void showAllFilterLabel();
+
+        void showNoActiveTasks();
+
+        void showNoCompletedTasks();
+
+        void showSuccessfullySaveMessage();
+
+        boolean isActive();
+
+        void showFilteringPopUpMenu();
+
     }
 
     interface Presenter extends BasePresenter {
