@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.project.todoapptest.R;
+import com.project.todoapptest.util.ActivityUtils;
 
 /**
  * @author shaomiao
@@ -21,6 +22,7 @@ public class TasksActivity extends AppCompatActivity {
     private static final String CURRENT_FILTERING_KEY = "CURRENT_FILTEING_KEY";
 
     private DrawerLayout mDrawerLayout;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,8 +45,10 @@ public class TasksActivity extends AppCompatActivity {
         TasksFragment tasksFragment =
                 (TasksFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
         if (tasksFragment == null) {
-//            tasksFragment = TasksFragment.new
+            tasksFragment = TasksFragment.newInstance();
+            ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), tasksFragment, R.id.contentFrame);
         }
+
 
     }
 }
