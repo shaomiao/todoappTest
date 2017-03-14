@@ -3,6 +3,7 @@ package com.project.todoapptest.tasks;
 import android.support.annotation.NonNull;
 
 import com.project.todoapptest.data.Task;
+import com.project.todoapptest.data.source.TasksRepository;
 
 /**
  * @author shaomiao
@@ -11,9 +12,12 @@ import com.project.todoapptest.data.Task;
  */
 
 public class TasksPresenter implements TasksContract.Presenter {
+
+    private final TasksRepository mTasksRepository;
+
     @Override
     public void result(int requestCode, int resultCode) {
-        
+
     }
 
     @Override
