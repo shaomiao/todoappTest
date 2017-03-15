@@ -1,5 +1,7 @@
 package com.project.todoapptest.data.source;
 
+import android.support.annotation.NonNull;
+
 import com.project.todoapptest.data.Task;
 
 import java.util.List;
@@ -26,9 +28,25 @@ public interface TasksDataSource {
         void onDataNotAvailable();
     }
 
-    void getTasks();
+    void getTasks(@NonNull LoadTasksCallback callback);
 
-    void getTask();
+    void getTask(@NonNull String taskId, @NonNull GetTaskCallback callback);
 
-    void saveTask();
+    void saveTask(@NonNull Task task);
+
+    void completeTask(@NonNull Task task);
+
+    void completeTask(@NonNull String taskId);
+
+    void activateTask(@NonNull Task task);
+
+    void activateTask(@NonNull String taskId);
+
+    void clearCompletedTasks();
+
+    void refreshTasks();
+
+    void deleteAllTasks();
+
+    void deleteTask(@NonNull String taskId);
 }
